@@ -8,7 +8,7 @@ export default function MediaLoader({
 	type,
 }: {
 	src: string;
-	type: "image" | "video";
+	type: 'image' | 'video';
 }) {
 	const [loading, setLoading] = useState(true);
 	const [showPlayButton, setShowPlayButton] = useState(true);

@@ -9,7 +9,7 @@ export default async function GalleryPage() {
 	return (
 		<div className="min-h-screen p-4 md:p-8 relative pb-20 text-center">
 			<div className="max-w-6xl mx-auto">
-			<h1 className="relative font-sangsang text-4xl md:text-5xl text-pink-600 mt-8 mb-16">
+				<h1 className="relative font-sangsang text-4xl md:text-5xl text-pink-600 mt-8 mb-16">
 					Personal Artworks
 					<img
 						src="/svgs/textbox.png" // Replace with actual image path
@@ -27,7 +27,10 @@ export default async function GalleryPage() {
 							rel="noopener noreferrer"
 							className="relative aspect-square block overflow-hidden rounded-lg hover:scale-105 transition-transform"
 						>
-							<MediaLoader src={item.src} type={item.type} />
+							<MediaLoader
+								src={item.src}
+								type={item.type as "image" | "video"}
+							/>
 						</SFXLink>
 					))}
 				</div>

@@ -27,7 +27,10 @@ export default async function CommissionsPage() {
 							rel="noopener noreferrer"
 							className="relative aspect-square block overflow-hidden rounded-lg hover:scale-105 transition-transform"
 						>
-							<MediaLoader src={item.src} type={item.type} />
+							<MediaLoader
+								src={item.src}
+								type={item.type as "image" | "video"}
+							/>
 						</SFXLink>
 					))}
 				</div>
