@@ -1,62 +1,66 @@
 import Image from "next/image";
-import SFXLink from "./_components/SFXLink";
+import SFXLink from "../_components/SFXLink";
+import BackButton from "../_components/BackButton";
 
-export default function Home() {
+export default function Contact() {
 	return (
 		<div className="min-h-screen flex flex-col items-center justify-center text-center relative pb-20">
 			<div className="flex-1 flex flex-col items-center justify-center">
 				<h4 className="font-providence text-2xl md:text-3xl mb-4">
-					Welcome to
+					Get in contact
 				</h4>
 				<h1 className="font-sangsang text-5xl md:text-6xl lg:text-7xl mb-8">
-					strwwbbrrii's house
+					strwwbbrrii's socials
 				</h1>
 				<div className="flex flex-wrap justify-center gap-4 md:gap-10">
 					<SFXLink
-						href="/gallery"
+						href="https://www.instagram.com/strwwbbrrii/"
 						className="hover:scale-105 transition-transform duration-200 ease-in-out"
-						aria-label="Navigate to Gallery"
+						aria-label="Navigate to Instagram"
+						target="_blank"
 					>
 						<div className="flex flex-col items-center gap-2">
 							<Image
-								src="/svgs/gallery.svg"
+								src="/svgs/instagram.svg"
 								alt="Gallery preview"
 								width={100}
 								height={100}
 							/>
-							<p className="font-providence text-lg">Gallery</p>
+							<p className="font-providence text-lg">Instagram</p>
 						</div>
 					</SFXLink>
 
 					<SFXLink
-						href="/commissions"
+						href="https://www.threads.net/@strwwbbrrii"
 						className="hover:scale-105 transition-transform duration-200 ease-in-out"
-						aria-label="Navigate to Commissions"
+						aria-label="Navigate to Threads"
+						target="_blank"
 					>
 						<div className="flex flex-col items-center gap-2">
 							<Image
-								src="/svgs/commissions.svg"
-								alt="Commissions preview"
+								src="/svgs/threads.svg"
+								alt="Threads"
 								width={100}
 								height={100}
 							/>
-							<p className="font-providence text-lg">Commissions</p>
+							<p className="font-providence text-lg">Threads</p>
 						</div>
 					</SFXLink>
 
 					<SFXLink
-						href="/contact"
-						className="hover:scale-105 transition-transform duration-200 ease-in-out"
-						aria-label="Navigate to Contact"
+						href="https://www.pinterest.com/strwwbbrrii/"
+						className="hover:scale-105 transition-transform duration-200 ease-in-out "
+						aria-label="Navigate to Pinterest"
+						target="_blank"
 					>
 						<div className="flex flex-col items-center gap-2">
 							<Image
-								src="/svgs/contact.svg"
-								alt="Contact preview"
+								src="/svgs/pinterest.svg"
+								alt="Pinterest preview"
 								width={100}
 								height={100}
 							/>
-							<p className="font-providence text-lg">Contact</p>
+							<p className="font-providence text-lg">Pinterest</p>
 						</div>
 					</SFXLink>
 				</div>
@@ -66,29 +70,12 @@ export default function Home() {
 					loop
 					muted
 					playsInline
+					
 				/>
 			</div>
 
 			<div className="absolute bottom-8">
-				<p className=" text-pink-700 font-providence animate-bounce">
-					Made with{" "}
-					<Image
-						src="/svgs/heart.svg"
-						alt="heart"
-						width={32}
-						height={32}
-						className="inline animate-spin"
-					/>{" "}
-					by{" "}
-					<SFXLink
-						href="https://github.com/aflyingbed"
-						target="_blank"
-						className="text-xl font-sangsang animate-pulse"
-						aria-label="Visit developer's GitHub"
-					>
-						aflyingbed
-					</SFXLink>
-				</p>
+				<BackButton />
 			</div>
 		</div>
 	);

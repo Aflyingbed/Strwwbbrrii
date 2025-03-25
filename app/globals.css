@@ -1,5 +1,22 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: Sangsang;
+  src: url("/fonts/Sangsang.otf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Providence;
+  src: url("/fonts/Providence.ttf");
+  font-display: swap;
+}
+
+@theme {
+  --font-sangsang: Sangsang, "sans-serif";
+  --font-providence: Providence, "sans-serif";
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -23,4 +40,26 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  cursor: url("/cursor/telescope.png"), pointer;
+}
+
+a:hover {
+  cursor: url("/cursor/star.png"), auto;
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-3px);
+  }
+  75% {
+    transform: translateX(3px);
+  }
+}
+
+.animate-wiggle {
+  animation: wiggle 1s ease-in-out infinite;
 }
