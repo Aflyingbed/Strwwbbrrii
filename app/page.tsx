@@ -1,5 +1,6 @@
 import Image from "next/image";
 import SFXLink from "./_components/SFXLink";
+import CatAnim from "./_components/CatAnim";
 
 export default function Home() {
 	return (
@@ -60,13 +61,7 @@ export default function Home() {
 						</div>
 					</SFXLink>
 				</div>
-				<video
-					src="/animations/cat.webm"
-					autoPlay
-					loop
-					muted
-					playsInline
-				/>
+				<CatAnim />
 			</div>
 
 			<div className="absolute bottom-8">

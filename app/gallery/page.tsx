@@ -12,7 +12,7 @@ export default async function GalleryPage() {
 				<h1 className="relative font-sangsang text-4xl md:text-5xl text-pink-600 mt-8 mb-16">
 					Personal Artworks
 					<img
-						src="/svgs/textbox.png" // Replace with actual image path
+						src="/svgs/textbox.png"
 						alt="Commissioned Artwork Banner"
 						className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] max-w-full h-auto opacity-60"
 					/>

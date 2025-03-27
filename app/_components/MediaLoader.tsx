@@ -3,6 +3,11 @@
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 
+const isMobile = () => {
+  const userAgent = typeof window !== 'undefined' ? window.navigator.userAgent : '';
+  return /iPhone|iPad|iPod|Android/i.test(userAgent);
+};
+
 export default function MediaLoader({
 	src,
 	type,
@@ -14,19 +19,22 @@ export default function MediaLoader({
 	const [showPlayButton, setShowPlayButton] = useState(true);
 	const videoRef = useRef<HTMLVideoElement>(null);
 	const containerRef = useRef<HTMLDivElement>(null);
-
-	// Handle video loading and hover events
+	
 	useEffect(() => {
 		if (type === "video" && videoRef.current) {
 			const video = videoRef.current;
 
 			const handleCanPlay = () => setLoading(false);
 			const handleMouseEnter = () => {
-				video.play().catch(console.error);
+				if (!isMobile()) {
+					video.play().catch(console.error);
+				}
 			};
 			const handleMouseLeave = () => {
-				video.pause();
-				video.currentTime = 0; // Reset playback position
+				if (!isMobile()) {
+					video.pause();
+					video.currentTime = 0;
+				}
 			};
 
 			video.addEventListener("canplay", handleCanPlay);
@@ -48,8 +56,7 @@ export default function MediaLoader({
 			};
 		}
 	}, [type, src]);
-
-	// Handle video play state changes
+	
 	useEffect(() => {
 		if (type === "video" && videoRef.current) {
 			const video = videoRef.current;
@@ -58,7 +65,7 @@ export default function MediaLoader({
 			const handlePause = () => setShowPlayButton(true);
 			const handleEnded = () => {
 				setShowPlayButton(true);
-				video.currentTime = 0; // Reset when video ends
+				video.currentTime = 0;
 			};
 
 			video.addEventListener("play", handlePlay);
