@@ -2,6 +2,12 @@ import { getGalleryMedia } from "../_utils/gallery";
 import SFXLink from "../_components/SFXLink";
 import MediaLoader from "../_components/MediaLoader";
 import BackButton from "../_components/BackButton";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "Strwwbbrrii | Commissions"
+}
+
 
 export default async function CommissionsPage() {
 	const media = await getGalleryMedia("commissions");

@@ -2,6 +2,12 @@ import Image from "next/image";
 import SFXLink from "../_components/SFXLink";
 import BackButton from "../_components/BackButton";
 import CatAnim from "../_components/CatAnim";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "Strwwbbrrii | Contact"
+}
+
 
 export default function Contact() {
 	return (

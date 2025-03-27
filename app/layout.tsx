@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import RippleEffect from "./_components/RippleEffect";
 
 
 export const metadata: Metadata = {
   title: "Strwwbbrrii's Showcase",
   description: "Digital art portfolio showcasing the works of Strwwbbrrii",
-  keywords: "digital art, artist portfolio, illustrations, concept art, art showcase, cute, sanrio, pastel, hello kitty, Strwwbbrrii",
+  keywords: "digital art, artist portfolio, illustrations, concept art, art showcase, cute, sanrio, pastel, hello kitty, Strwwbbrrii, digital artist, cute art, character illustration",
   openGraph: {
     title: "Welcome to Strwwbbrrii's House",
     description: "Digital art portfolio showcasing the works of Strwwbbrrii",
@@ -40,9 +41,8 @@ export default function RootLayout({
       <body
         className={"antialiased"}
       >
-        <main className="min-h-screen bg-pink-200 text-black">{children}
-        </main>
-        
+        <RippleEffect />
+        <main className="min-h-screen bg-pink-200 text-black">{children}        </main>
       </body>
     </html>
   );
